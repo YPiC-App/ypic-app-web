@@ -5,5 +5,8 @@
 - **Progessive Web App**
   - Workbox Webpack Plugin SW: https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
   - Manifest Generator: https://app-manifest.firebaseapp.com/
+- **Testing**
+  -  Jest: https://jestjs.io/docs/en/getting-started
+  -  (TO BE IMPLEMENTED) React Testing: Enzyme
 
 
