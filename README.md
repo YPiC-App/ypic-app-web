@@ -8,5 +8,7 @@
 - **Testing**
   -  Jest: https://jestjs.io/docs/en/getting-started & https://github.com/jest-community/eslint-plugin-jest
   -  (TO BE IMPLEMENTED) React Testing: Enzyme
+-  **Styling**
+-  Webpack 4 SASS: https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1
 
 
