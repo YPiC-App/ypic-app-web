@@ -3,10 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
@@ -49,10 +50,15 @@ module.exports = {
       skipWaiting: true,
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
-      chunkFilename: '[name].css',
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
     }),
   ],
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin(),
+    ],
+  },
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: ['node_modules', 'src'],
