@@ -19,6 +19,13 @@ module.exports = {
     'jest',
     'react',
   ],
+  settings: {
+    ["import/resolver"]: {
+      node: {
+        paths: ["node_modules", "src"]
+      }
+    }
+  },
   rules: {
   },
 };
