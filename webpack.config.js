@@ -11,6 +11,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     filename: 'index_bundle.js',
+    publicPath: '/',
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -25,7 +29,6 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
         ],
