@@ -11,7 +11,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index_bundle.js',
+    filename: 'main.js',
+    chunkFilename: '[name].js',
     publicPath: '/',
   },
   module: {
@@ -56,6 +57,24 @@ module.exports = {
     }),
   ],
   optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        vendor: {
+          chunks: 'all',
+          test: /node_modules/,
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'async',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true,
+        },
+      },
+    },
     minimizer: [
       new OptimizeCSSAssetsPlugin(),
     ],

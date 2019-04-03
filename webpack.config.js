@@ -10,11 +10,33 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index_bundle.js',
+    filename: 'main.js',
+    chunkFilename: '[name].js',
     publicPath: '/',
   },
   devServer: {
     historyApiFallback: true,
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        vendors: false,
+        vendor: {
+          chunks: 'all',
+          test: /node_modules/,
+          priority: 20,
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'async',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
