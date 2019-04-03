@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "stylelint-config-airbnb"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "rules": {
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "ignore": ["after-comment", "first-nested"]
+      }
+    ]
+  }
+}

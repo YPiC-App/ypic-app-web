@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --config webpack.config.js --open --hot",
     "build": "webpack --config webpack.config.prod.js",
     "lint": "eslint .",
+    "lint:style": "stylelint 'src/**/*.scss'",
     "test": "jest"
   },
   "author": "Lyle Classen",
@@ -41,6 +42,10 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-airbnb": "0.0.0",
+    "stylelint-order": "^2.1.0",
+    "stylelint-scss": "^3.5.4",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
