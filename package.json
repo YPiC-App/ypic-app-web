@@ -47,6 +47,7 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
     "stylelint-config-airbnb": "0.0.0",
+    "stylelint-config-prettier": "^5.0.0",
     "stylelint-order": "^2.1.0",
     "stylelint-scss": "^3.5.4",
     "webpack": "^4.29.6",

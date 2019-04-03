@@ -1,6 +1,7 @@
 {
   "extends": [
-    "stylelint-config-airbnb"
+    "stylelint-config-airbnb",
+    "stylelint-prettier/recommended"
   ],
   "plugins": [
     "stylelint-scss",
