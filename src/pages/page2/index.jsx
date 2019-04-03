@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '@material/react-button';
+import Button from 'components/button';
 
 import './styles.scss';
 
