@@ -75,9 +75,7 @@ module.exports = {
         },
       },
     },
-    minimizer: [
-      new OptimizeCSSAssetsPlugin(),
-    ],
+    minimizer: [new OptimizeCSSAssetsPlugin()],
   },
   resolve: {
     extensions: ['.js', '.jsx'],
