@@ -8,6 +8,8 @@ import {
   TwitterBoxIcon,
 } from 'components/icons';
 
+import './styles.scss';
+
 const SignIn = () => (
   <div className="sign-in">
     <div className="sign-in__content-wrapper">
@@ -23,21 +25,25 @@ const SignIn = () => (
           <Button
             raised
             className="sign-in__google-button"
-            icon={GooglePlusBoxIcon}
+            icon={<GooglePlusBoxIcon />}
           >
             Sign in with Google
           </Button>
-          <Button raised className="sign-in__fb-button" icon={FacebookBoxIcon}>
+          <Button
+            raised
+            className="sign-in__fb-button"
+            icon={<FacebookBoxIcon />}
+          >
             Sign in with Facebook
           </Button>
           <Button
             raised
             className="sign-in__twitter-button"
-            icon={TwitterBoxIcon}
+            icon={<TwitterBoxIcon />}
           >
             Sign in with Twitter
           </Button>
-          <Button raised className="sign-in__email-button" icon={EmailIcon}>
+          <Button raised className="sign-in__email-button" icon={<EmailIcon />}>
             Register with Email
           </Button>
         </div>
