@@ -2,7 +2,7 @@
   "name": "React Starter App",
   "short_name": "React_Start",
   "theme_color": "#1f79b8",
-  "background_color": "#FFFFF",
+  "background_color": "#FFFFFF",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",

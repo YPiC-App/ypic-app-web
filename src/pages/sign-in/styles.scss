@@ -1,0 +1,76 @@
+@import '@material/button/mixins';
+@import 'styles/material-styles.scss';
+@import 'styles/mixins.scss';
+@import 'styles/colors.scss';
+
+.sign-in {
+  height: 100%;
+  background-color: $mdc-theme-primary;
+  background: radial-gradient(
+    circle,
+    lighten($mdc-theme-primary, 10%),
+    darken($mdc-theme-primary, 5%)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in__content-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  @include breakpoint(tablet) {
+    width: 60%;
+  }
+  @include breakpoint(desktop) {
+    width: 50%;
+  }
+
+  img {
+    margin-bottom: 30px;
+  }
+}
+
+.sign-in__button-group {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  @include breakpoint(desktop) {
+    width: 60%;
+  }
+
+  button {
+    margin: 8px 0;
+  }
+}
+
+.sign-in__logo {
+  width: 70%;
+  height: 70%;
+  @include breakpoint(tablet) {
+    width: 60%;
+    height: 60%;
+  }
+  @include breakpoint(desktop) {
+    width: 45%;
+    height: 45%;
+  }
+}
+
+.sign-in__google-button {
+  @include mdc-button-container-fill-color($google-red);
+}
+
+.sign-in__fb-button {
+  @include mdc-button-container-fill-color($facebook-blue);
+}
+
+.sign-in__twitter-button {
+  @include mdc-button-container-fill-color($twitter-blue);
+}
+
+.sign-in__email-button {
+  @include mdc-button-container-fill-color($mdc-theme-secondary);
+}
