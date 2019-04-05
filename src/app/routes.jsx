@@ -2,13 +2,13 @@ import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 const SignIn = lazy(() => import('pages/sign-in'));
-const Page2 = lazy(() => import('pages/page2'));
+const Main = lazy(() => import('./main'));
 
 const Routes = () => (
   <Suspense fallback={<div>Loading...</div>}>
     <Switch>
-      <Route path="/" exact component={SignIn} />
-      <Route path="/page2" component={Page2} />
+      <Route path="/" exact component={Main} />
+      <Route path="/sign-in" component={SignIn} />
     </Switch>
   </Suspense>
 );

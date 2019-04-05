@@ -15,6 +15,9 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
     "@material/react-button": "^0.11.0",
+    "@material/react-drawer": "^0.11.0",
+    "@material/react-material-icon": "^0.11.0",
+    "@material/react-top-app-bar": "^0.11.0",
     "mdi-react": "^5.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
