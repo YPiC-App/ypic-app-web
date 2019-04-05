@@ -6,7 +6,7 @@ const Main = () => (
   <div>
     <TopBar />
     <NavDrawer />
-    Hello
+    <div>Content</div>
   </div>
 );
 
