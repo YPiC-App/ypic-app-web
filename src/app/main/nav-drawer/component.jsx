@@ -16,7 +16,7 @@ const NavDrawer = ({ open, onClose }) => (
       <DrawerSubtitle>matt@email.com</DrawerSubtitle>
     </DrawerHeader>
     <DrawerContent>
-      <a href="#">Content</a>
+      <a href="https://www.google.com/">Content</a>
     </DrawerContent>
   </Drawer>
 );
