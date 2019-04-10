@@ -1,3 +1,15 @@
 @import 'styles/material-styles.scss';
 
 @import '@material/react-drawer/index.scss';
+@import '@material/drawer/mixins';
+
+.mdc-drawer {
+  border: none;
+  @include mdc-drawer-title-ink-color(#FFFFFF);
+  @include mdc-drawer-subtitle-ink-color(#FFFFFF);
+}
+
+.mdc-drawer__header {
+  background-color: $mdc-theme-primary;
+
+}
