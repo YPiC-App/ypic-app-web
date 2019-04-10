@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Drawer, {
   DrawerHeader,
   DrawerSubtitle,
@@ -8,14 +9,21 @@ import Drawer, {
 
 import './styles.scss';
 
-const NavDrawer = () => (
-  <Drawer open modal onClose={() => console.log('closing')}>
+const NavDrawer = ({ open, onClose }) => (
+  <Drawer open={open} onClose={onClose} modal>
     <DrawerHeader>
       <DrawerTitle tag="h2">Inbox</DrawerTitle>
       <DrawerSubtitle>matt@email.com</DrawerSubtitle>
     </DrawerHeader>
-    <DrawerContent>Content</DrawerContent>
+    <DrawerContent>
+      <a href="#">Content</a>
+    </DrawerContent>
   </Drawer>
 );
+
+NavDrawer.propTypes = {
+  open: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default NavDrawer;

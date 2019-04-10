@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import TopAppBar, {
   TopAppBarTitle,
   TopAppBarIcon,
@@ -9,21 +11,21 @@ import MaterialIcon from '@material/react-material-icon';
 
 import './styles.scss';
 
-const TopBar = () => (
+const TopBar = ({ onMenuClick }) => (
   <TopAppBar dense>
     <TopAppBarRow>
       <TopAppBarSection align="start">
         <TopAppBarIcon navIcon tabIndex={0}>
-          <MaterialIcon
-            hasRipple
-            icon="menu"
-            onClick={() => console.log('click')}
-          />
+          <MaterialIcon hasRipple icon="menu" onClick={onMenuClick} />
         </TopAppBarIcon>
         <TopAppBarTitle>Some Text</TopAppBarTitle>
       </TopAppBarSection>
     </TopAppBarRow>
   </TopAppBar>
 );
+
+TopBar.propTypes = {
+  onMenuClick: PropTypes.func.isRequired,
+};
 
 export default TopBar;
