@@ -19,16 +19,20 @@
     "@material/react-material-icon": "^0.11.0",
     "@material/react-top-app-bar": "^0.11.0",
     "connected-react-router": "^6.3.2",
+    "firebase": "^5.9.3",
     "history": "^4.9.0",
+    "lifecycler": "^0.1.7",
     "mdi-react": "^5.3.0",
     "payload-action-creator": "0.0.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-preloadr": "^1.2.3",
     "react-redux": "^7.0.1",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
