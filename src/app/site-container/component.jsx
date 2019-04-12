@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Lifecycler from 'lifecycler';
 import Preloadr from 'react-preloadr';
 import Routes from 'app/routes';
+import LoadingScreen from 'components/loading-screen/index';
 
 const SiteContainer = ({ userAuthStateStatus, userData, onLoad }) => (
   <Lifecycler componentDidMount={onLoad}>
     <Preloadr
-      requested={() => <div>Busy Checking User Status!!!</div>}
+      requested={() => <LoadingScreen loadingText="Checking Auth State.." />}
       status={userAuthStateStatus}
     >
       {() => <Routes userData={userData} />}
