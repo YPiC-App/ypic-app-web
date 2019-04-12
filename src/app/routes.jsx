@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from 'components/private-route';
 import { isNullOrUndefined } from 'util';
+import LoadingScreen from 'components/loading-screen';
 
 const SignIn = lazy(() => import('pages/sign-in'));
 const Main = lazy(() => import('pages/main'));
 
 const Routes = ({ userData }) => (
-  <Suspense fallback={<div>Loading...</div>}>
+  <Suspense fallback={<LoadingScreen />}>
     <Switch>
       <PrivateRoute
         path="/"
