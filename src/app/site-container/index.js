@@ -6,15 +6,12 @@ const handleOnLoad = dispatch => () => {
   dispatch(activateAuthStateListenerAsync());
 };
 
-const mapStateToProps = (
-  {
-    api: {
-      authentication: { getUserAuthState },
-    },
-    user: { data },
+const mapStateToProps = ({
+  api: {
+    authentication: { getUserAuthState },
   },
-  ownProps
-) => ({
+  user: { data },
+}) => ({
   userAuthStateStatus: getUserAuthState.status,
   userData: data,
 });
