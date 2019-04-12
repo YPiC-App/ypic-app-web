@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import PrivateRoute from 'components/private-route';
 import { isNullOrUndefined } from 'util';
 import LoadingScreen from 'components/loading-screen';
@@ -8,9 +8,10 @@ import LoadingScreen from 'components/loading-screen';
 const SignIn = lazy(() => import('pages/sign-in'));
 const Main = lazy(() => import('pages/main'));
 
-const Routes = ({ userData }) => (
-  <Suspense fallback={<LoadingScreen />}>
-    <Switch>
+const Routes = ({ userData }) => {
+  console.log('Routes are rendering', userData);
+  return (
+    <Suspense fallback={<LoadingScreen />}>
       <PrivateRoute
         path="/"
         exact
@@ -19,9 +20,9 @@ const Routes = ({ userData }) => (
         redirectPath="/sign-in"
       />
       <Route path="/sign-in" component={SignIn} />
-    </Switch>
-  </Suspense>
-);
+    </Suspense>
+  );
+};
 
 Routes.defaultProps = {
   userData: undefined,

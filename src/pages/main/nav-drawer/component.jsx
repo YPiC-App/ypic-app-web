@@ -6,17 +6,21 @@ import Drawer, {
   DrawerTitle,
   DrawerContent,
 } from '@material/react-drawer';
-
+import List, { ListItem, ListItemText } from 'components/list';
 import './styles.scss';
 
-const NavDrawer = ({ open, onClose }) => (
+const NavDrawer = ({ open, onClose, onSignOut }) => (
   <Drawer open={open} onClose={onClose} modal>
     <DrawerHeader>
       <DrawerTitle tag="h2">Inbox</DrawerTitle>
       <DrawerSubtitle>matt@email.com</DrawerSubtitle>
     </DrawerHeader>
     <DrawerContent>
-      <a href="https://www.google.com/">Content</a>
+      <List>
+        <ListItem onClick={onSignOut}>
+          <ListItemText primaryText="Sign Out" />
+        </ListItem>
+      </List>
     </DrawerContent>
   </Drawer>
 );
@@ -24,6 +28,7 @@ const NavDrawer = ({ open, onClose }) => (
 NavDrawer.propTypes = {
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  onSignOut: PropTypes.func.isRequired,
 };
 
 export default NavDrawer;
