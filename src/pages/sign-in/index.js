@@ -1,12 +1,9 @@
 import { connect } from 'react-redux';
-import { signInFacebook } from 'services/authentication';
-import { push } from 'connected-react-router';
+import { signInFacebookAsync } from 'reducers/api/authentication/sign-in/thunks';
 import Component from './component';
 
 const handleOnFacebook = dispatch => async () => {
-  await signInFacebook();
-  console.log('Going to push to main now');
-  dispatch(push('/'));
+  dispatch(signInFacebookAsync());
 };
 
 const mapStateToProps = (state, ownProps) => ({});
