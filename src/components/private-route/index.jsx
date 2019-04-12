@@ -17,7 +17,8 @@ const PrivateRoute = ({
 );
 
 PrivateRoute.propTypes = {
-  component: PropTypes.node.isRequired,
+  component: PropTypes.oneOfType([Route.propTypes.component, PropTypes.object])
+    .isRequired,
   isAuthed: PropTypes.bool.isRequired,
   redirectPath: PropTypes.string.isRequired,
 };
