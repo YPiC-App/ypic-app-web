@@ -5,6 +5,7 @@ import Component from './component';
 
 const handleOnFacebook = dispatch => async () => {
   await signInFacebook();
+  console.log('Going to push to main now');
   dispatch(push('/'));
 };
 
