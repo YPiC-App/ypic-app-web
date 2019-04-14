@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 import { signInFacebookAsync } from 'reducers/api/authentication/sign-in/thunks';
 import Component from './component';
 
-const handleOnFacebook = dispatch => async () => {
-  dispatch(signInFacebookAsync());
+const handleOnFacebook = (dispatch, { history: { push } }) => async () => {
+  dispatch(signInFacebookAsync(push));
 };
 
 const mapStateToProps = (state, ownProps) => ({});
 
-const mapDispatchToProps = dispatch => ({
-  onFacebookClick: handleOnFacebook(dispatch),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onFacebookClick: handleOnFacebook(dispatch, ownProps),
 });
 
 export default connect(
