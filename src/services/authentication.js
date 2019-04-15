@@ -11,8 +11,7 @@ export const signInFacebook = async () => {
     const result = await firebase.auth().signInWithPopup(provider);
     return result;
   } catch (error) {
-    console.log(error);
-    return error;
+    throw error;
   }
 };
 
@@ -23,6 +22,6 @@ export const signInGoogle = async () => {
     return result;
   } catch (error) {
     console.log(error);
-    return error;
+    throw error;
   }
 };
