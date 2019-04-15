@@ -8,6 +8,7 @@ import {
   EmailIcon,
   TwitterBoxIcon,
 } from 'components/icons';
+import EmailSignIn from './email-sign-in';
 
 import './styles.scss';
 
@@ -22,32 +23,35 @@ const SignIn = ({ onFacebookClick }) => (
         />
       </div>
       <div className="center-h">
-        <div className="sign-in__button-group">
-          <Button
-            raised
-            className="sign-in__google-button"
-            icon={<GooglePlusBoxIcon />}
-          >
-            Sign in with Google
-          </Button>
-          <Button
-            raised
-            className="sign-in__fb-button"
-            icon={<FacebookBoxIcon />}
-            onClick={onFacebookClick}
-          >
-            Sign in with Facebook
-          </Button>
-          <Button
-            raised
-            className="sign-in__twitter-button"
-            icon={<TwitterBoxIcon />}
-          >
-            Sign in with Twitter
-          </Button>
-          <Button raised className="sign-in__email-button" icon={<EmailIcon />}>
-            Register with Email
-          </Button>
+        <div className="sign-in__interactive-area">
+          <EmailSignIn />
+          <div className="center-h">OR</div>
+          <div className="sign-in__button-group">
+            <Button
+              raised
+              className="sign-in__google-button"
+              icon={<GooglePlusBoxIcon />}
+              disabled
+            >
+              Sign in with Google
+            </Button>
+            <Button
+              raised
+              className="sign-in__fb-button"
+              icon={<FacebookBoxIcon />}
+              onClick={onFacebookClick}
+            >
+              Sign in with Facebook
+            </Button>
+            <Button
+              raised
+              className="sign-in__twitter-button"
+              icon={<TwitterBoxIcon />}
+              disabled
+            >
+              Sign in with Twitter
+            </Button>
+          </div>
         </div>
       </div>
     </div>

@@ -29,17 +29,23 @@
   }
 
   img {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+.sign-in__interactive-area {
+  display: flex;
+  flex-direction: column;
+
+  width: 80%;
+  @include breakpoint(desktop) {
+    width: 60%;
   }
 }
 
 .sign-in__button-group {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  @include breakpoint(desktop) {
-    width: 60%;
-  }
 
   button {
     margin: 8px 0;
@@ -47,15 +53,15 @@
 }
 
 .sign-in__logo {
-  width: 70%;
-  height: 70%;
+  width: 60%;
+  height: 60%;
   @include breakpoint(tablet) {
-    width: 60%;
-    height: 60%;
+    width: 55%;
+    height: 55%;
   }
   @include breakpoint(desktop) {
-    width: 45%;
-    height: 45%;
+    width: 40%;
+    height: 40%;
   }
 }
 
@@ -69,8 +75,4 @@
 
 .sign-in__twitter-button {
   @include mdc-button-container-fill-color($twitter-blue);
-}
-
-.sign-in__email-button {
-  @include mdc-button-container-fill-color($mdc-theme-secondary);
 }
