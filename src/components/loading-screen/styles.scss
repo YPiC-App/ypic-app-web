@@ -1,3 +1,5 @@
+@import 'styles/material-styles.scss';
+
 .loading-screen {
   position: fixed; /* Sit on top of the page content */
   width: 100%; /* Full width (cover the whole page) */
@@ -6,11 +8,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.95); /* Black background with opacity */
+  background-color: rgba($mdc-theme-primary,0.80); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
 
 .loading-screen__text-container {
-  color: white;
+  color: #ffffff;
 }

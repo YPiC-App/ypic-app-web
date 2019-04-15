@@ -11,9 +11,12 @@ const mapStateToProps = ({
     authentication: { getUserAuthState },
   },
   user: { data },
+  site: { showOverlay, overlayText },
 }) => ({
   userAuthStateStatus: getUserAuthState.status,
   userData: data,
+  showOverlay,
+  overlayText,
 });
 
 const mapDispatchToProps = dispatch => ({
