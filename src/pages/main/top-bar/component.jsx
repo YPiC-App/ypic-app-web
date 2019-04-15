@@ -12,7 +12,7 @@ import MaterialIcon from '@material/react-material-icon';
 import './styles.scss';
 
 const TopBar = ({ onMenuClick }) => (
-  <TopAppBar dense>
+  <TopAppBar>
     <TopAppBarRow>
       <TopAppBarSection align="start">
         <TopAppBarIcon navIcon tabIndex={0}>

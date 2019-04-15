@@ -8,21 +8,18 @@ import LoadingScreen from 'components/loading-screen';
 const SignIn = lazy(() => import('pages/sign-in'));
 const Main = lazy(() => import('pages/main'));
 
-const Routes = ({ userData }) => {
-  console.log('Routes are rendering', userData);
-  return (
-    <Suspense fallback={<LoadingScreen />}>
-      <PrivateRoute
-        path="/"
-        exact
-        component={Main}
-        isAuthed={!isNullOrUndefined(userData)}
-        redirectPath="/sign-in"
-      />
-      <Route path="/sign-in" component={SignIn} />
-    </Suspense>
-  );
-};
+const Routes = ({ userData }) => (
+  <Suspense fallback={<LoadingScreen />}>
+    <PrivateRoute
+      path="/"
+      exact
+      component={Main}
+      isAuthed={!isNullOrUndefined(userData)}
+      redirectPath="/sign-in"
+    />
+    <Route path="/sign-in" component={SignIn} />
+  </Suspense>
+);
 
 Routes.defaultProps = {
   userData: undefined,
