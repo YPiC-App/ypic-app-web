@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { push } from 'connected-react-router';
+import { withRouter } from 'react-router-dom';
 import { openNavDrawer } from 'reducers/main/nav-drawer/actions';
 import { signOut } from 'services/authentication';
 import Component from './component';
@@ -8,9 +8,10 @@ const handleOnClose = dispatch => () => {
   dispatch(openNavDrawer(false));
 };
 
-const handleOnSignOut = dispatch => async () => {
+const handleOnSignOut = (dispatch, ownProps) => async () => {
+  console.log(ownProps);
   await signOut();
-  dispatch(push('/sign-in'));
+  // dispatch(push('/sign-in'));
 };
 
 const mapStateToProps = ({
@@ -21,12 +22,14 @@ const mapStateToProps = ({
   open,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   onClose: handleOnClose(dispatch),
-  onSignOut: handleOnSignOut(dispatch),
+  onSignOut: handleOnSignOut(dispatch, ownProps),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Component);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Component)
+);
