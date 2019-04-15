@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import firebase from 'firebase';
+import firbaseConfig from 'private/firebase-config';
 import App from 'app';
+
+firebase.initializeApp(firbaseConfig);
 
 ReactDOM.render(React.createElement(App), document.getElementById('app'));
 

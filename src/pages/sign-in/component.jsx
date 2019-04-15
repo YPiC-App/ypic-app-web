@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'components/button';
 import LogoRound from 'assets/images/logo-round.png';
 import {
@@ -10,7 +11,7 @@ import {
 
 import './styles.scss';
 
-const SignIn = () => (
+const SignIn = ({ onFacebookClick }) => (
   <div className="sign-in">
     <div className="sign-in__content-wrapper">
       <div className="center-h">
@@ -33,6 +34,7 @@ const SignIn = () => (
             raised
             className="sign-in__fb-button"
             icon={<FacebookBoxIcon />}
+            onClick={onFacebookClick}
           >
             Sign in with Facebook
           </Button>
@@ -51,5 +53,9 @@ const SignIn = () => (
     </div>
   </div>
 );
+
+SignIn.propTypes = {
+  onFacebookClick: PropTypes.func.isRequired,
+};
 
 export default SignIn;

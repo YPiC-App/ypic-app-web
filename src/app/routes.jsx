@@ -1,16 +1,32 @@
 import React, { lazy, Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
+import PrivateRoute from 'components/private-route';
+import { isNullOrUndefined } from 'util';
+import LoadingScreen from 'components/loading-screen';
 
 const SignIn = lazy(() => import('pages/sign-in'));
-const Page2 = lazy(() => import('pages/page2'));
+const Main = lazy(() => import('pages/main'));
 
-const Routes = () => (
-  <Suspense fallback={<div>Loading...</div>}>
-    <Switch>
-      <Route path="/" exact component={SignIn} />
-      <Route path="/page2" component={Page2} />
-    </Switch>
+const Routes = ({ userData }) => (
+  <Suspense fallback={<LoadingScreen />}>
+    <PrivateRoute
+      path="/"
+      exact
+      component={Main}
+      isAuthed={!isNullOrUndefined(userData)}
+      redirectPath="/sign-in"
+    />
+    <Route path="/sign-in" component={SignIn} />
   </Suspense>
 );
+
+Routes.defaultProps = {
+  userData: undefined,
+};
+
+Routes.propTypes = {
+  userData: PropTypes.shape(),
+};
 
 export default Routes;
