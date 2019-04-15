@@ -5,14 +5,13 @@ import LogoRound from 'assets/images/logo-round.png';
 import {
   GooglePlusBoxIcon,
   FacebookBoxIcon,
-  EmailIcon,
   TwitterBoxIcon,
 } from 'components/icons';
 import EmailSignIn from './email-sign-in';
 
 import './styles.scss';
 
-const SignIn = ({ onFacebookClick }) => (
+const SignIn = ({ onFacebookClick, onGoogleClick }) => (
   <div className="sign-in">
     <div className="sign-in__content-wrapper">
       <div className="center-h">
@@ -31,7 +30,7 @@ const SignIn = ({ onFacebookClick }) => (
               raised
               className="sign-in__google-button"
               icon={<GooglePlusBoxIcon />}
-              disabled
+              onClick={onGoogleClick}
             >
               Sign in with Google
             </Button>
@@ -60,6 +59,7 @@ const SignIn = ({ onFacebookClick }) => (
 
 SignIn.propTypes = {
   onFacebookClick: PropTypes.func.isRequired,
+  onGoogleClick: PropTypes.func.isRequired,
 };
 
 export default SignIn;

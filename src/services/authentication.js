@@ -8,10 +8,18 @@ export const signOut = () => firebase.auth().signOut();
 export const signInFacebook = async () => {
   try {
     const provider = new firebase.auth.FacebookAuthProvider();
-
     const result = await firebase.auth().signInWithPopup(provider);
+    return result;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
 
-    console.log('Signed-In With FB.', result);
+export const signInGoogle = async () => {
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
     return result;
   } catch (error) {
     console.log(error);
