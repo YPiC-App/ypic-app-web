@@ -32,6 +32,7 @@
     "prop-types": "^15.7.2",
     "react-preloadr": "^1.2.3",
     "react-redux": "^7.0.2",
+    "react-toastify": "^5.0.1",
     "redux-devtools-extension": "^2.13.8"
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"

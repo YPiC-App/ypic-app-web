@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Lifecycler from 'lifecycler';
 import Preloadr from 'react-preloadr';
 import Routes from 'app/routes';
-import LoadingScreen from 'components/loading-screen/index';
+import LoadingScreen from 'components/loading-screen';
+import ToastContainer from 'components/toaster';
+import { Bounce } from 'react-toastify';
 
 const SiteContainer = ({
   userAuthStateStatus,
@@ -20,6 +22,12 @@ const SiteContainer = ({
       {() => <Routes userData={userData} />}
     </Preloadr>
     {showOverlay && <LoadingScreen loadingText={overlayText} />}
+    <ToastContainer
+      autoClose={10000}
+      transition={Bounce}
+      position="top-center"
+      toastClassName="toaster"
+    />
   </Lifecycler>
 );
 
