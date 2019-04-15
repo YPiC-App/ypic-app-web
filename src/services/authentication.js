@@ -21,7 +21,6 @@ export const signInGoogle = async () => {
     const result = await firebase.auth().signInWithPopup(provider);
     return result;
   } catch (error) {
-    console.log(error);
     throw error;
   }
 };
