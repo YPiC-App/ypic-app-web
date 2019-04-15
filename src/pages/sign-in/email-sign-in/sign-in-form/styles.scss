@@ -1,0 +1,24 @@
+@import 'styles/material-styles.scss';
+
+@import '@material/button/mixins';
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-form__button-container {
+  display: flex;
+  flex-direction: column;
+  >*:first-child {
+    margin-bottom: 8px;
+  }
+  >*:not(:first-child){
+    margin: 8px 0;
+  }
+}
+
+.sign-in-form__email-button {
+  @include mdc-button-container-fill-color($mdc-theme-secondary);
+}
+
