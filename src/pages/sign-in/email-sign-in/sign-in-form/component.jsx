@@ -13,6 +13,7 @@ const SignInForm = ({ values, handleChange, handleBlur, handleSubmit }) => (
       onBlur={handleBlur}
       label="Email"
       id="email"
+      autoComplete="username"
     />
     <TextInput
       value={values.password}
@@ -21,6 +22,7 @@ const SignInForm = ({ values, handleChange, handleBlur, handleSubmit }) => (
       label="Password"
       type="password"
       id="password"
+      autoComplete="current-password"
     />
     <div className="sign-in-form__button-container">
       <Button type="submit" className="sign-in-form__sign-in-button" raised>
