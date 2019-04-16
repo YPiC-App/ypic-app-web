@@ -24,3 +24,14 @@ export const signInGoogle = async () => {
     throw error;
   }
 };
+
+export const signInEmail = async (email, password) => {
+  try {
+    const result = await firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
