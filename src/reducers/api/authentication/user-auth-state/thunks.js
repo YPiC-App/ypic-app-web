@@ -9,7 +9,6 @@ const handleAuthStateChange = dispatch => authData => {
   dispatch(getUserAuthStateRequested());
   dispatch(setUserData(authData));
   dispatch(getUserAuthStateSucceeded());
-  console.log('Auth State Changing', authData);
 };
 
 // eslint-disable-next-line
