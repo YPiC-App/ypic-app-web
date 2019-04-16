@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import MenuSurface, { Corner } from 'components/menu-surface';
+import List, { ListItem, ListItemText } from 'components/list';
 
 export default class UserSection extends Component {
   constructor(props) {
@@ -53,7 +54,14 @@ export default class UserSection extends Component {
           anchorElement={anchorElement}
           className="top-bar-user-section__menu"
         >
-          some menu content
+          <List>
+            <ListItem onClick={() => {}}>
+              <ListItemText primaryText="Edit Profile" />
+            </ListItem>
+            <ListItem onClick={() => {}}>
+              <ListItemText primaryText="Sign Out" />
+            </ListItem>
+          </List>
         </MenuSurface>
       </div>
     );
