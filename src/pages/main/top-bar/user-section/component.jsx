@@ -32,22 +32,26 @@ export default class UserSection extends Component {
     const { anchorElement, open } = this.state;
     return (
       <div className="top-bar-user-section mdc-menu-surface--anchor">
-        <div
-          className="top-bar-user-section__display-text"
+        <button
+          type="button"
+          className="top-bar-user-section__clickable-area invisible-button"
           onClick={this.onOpenClick}
         >
-          <span>{displayName}</span>
-        </div>
-        <img
-          className="top-bar-user-section__avatar mdc-menu-surface--anchor"
-          src={photoURL}
-          alt={`${displayName} Avatar`}
-          ref={this.setAnchorElement}
-        />
+          <div className="top-bar-user-section__display-text">
+            <span>{displayName}</span>
+          </div>
+          <img
+            className="top-bar-user-section__avatar mdc-menu-surface--anchor"
+            src={photoURL}
+            alt={`${displayName} Avatar`}
+            ref={this.setAnchorElement}
+          />
+        </button>
         <MenuSurface
           open={open}
           anchorCorner={Corner.BOTTOM_LEFT}
           anchorElement={anchorElement}
+          className="top-bar-user-section__menu"
         >
           some menu content
         </MenuSurface>
