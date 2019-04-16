@@ -10,6 +10,9 @@ const SignInForm = ({
   handleChange,
   handleBlur,
   handleSubmit,
+  isValid,
+  isSubmitting,
+  errors,
   showPassword,
   onShowPasswordClick,
 }) => (
@@ -18,6 +21,8 @@ const SignInForm = ({
       value={values.email}
       onChange={handleChange}
       onBlur={handleBlur}
+      helperText={errors.email}
+      isValid={!errors.email}
       label="Email"
       id="email"
       autoComplete="username"
@@ -26,6 +31,8 @@ const SignInForm = ({
       value={values.password}
       onChange={handleChange}
       onBlur={handleBlur}
+      helperText={errors.password}
+      isValid={!errors.password}
       label="Password"
       type={showPassword ? 'text' : 'password'}
       id="password"
@@ -34,7 +41,12 @@ const SignInForm = ({
       onTrailingIconSelect={onShowPasswordClick}
     />
     <div className="sign-in-form__button-container">
-      <Button type="submit" className="sign-in-form__sign-in-button" raised>
+      <Button
+        type="submit"
+        className="sign-in-form__sign-in-button"
+        raised
+        disabled={!isValid || isSubmitting}
+      >
         Sign In
       </Button>
       <Button
@@ -54,6 +66,9 @@ SignInForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleBlur: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  isValid: PropTypes.bool.isRequired,
+  isSubmitting: PropTypes.bool.isRequired,
+  errors: PropTypes.shape().isRequired,
   showPassword: PropTypes.bool.isRequired,
   onShowPasswordClick: PropTypes.func.isRequired,
 };
