@@ -1,11 +1,31 @@
 import { connect } from 'react-redux';
+import { setShowPassword } from 'reducers/pages/sign-in/actions';
 import Form from './form';
 
-const mapStateToProps = (state, ownProps) => ({});
+const handleShowPassword = (dispatch, showPassword) => () => {
+  dispatch(setShowPassword(!showPassword));
+};
 
-const mapDispatchToProps = dispatch => ({});
+const mapStateToProps = ({
+  pages: {
+    signIn: { showPassword },
+  },
+}) => ({
+  showPassword,
+});
+
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+});
+
+const mergeProps = (stateProps, { dispatch, ...dispatchProps }) => ({
+  ...stateProps,
+  ...dispatchProps,
+  onShowPasswordClick: handleShowPassword(dispatch, stateProps.showPassword),
+});
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
+  mergeProps
 )(Form);

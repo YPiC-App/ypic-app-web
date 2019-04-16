@@ -2,10 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from 'components/text-input';
 import Button from 'components/button';
-
+import { EyeOffIcon, EyeIcon } from 'components/icons';
 import './styles.scss';
 
-const SignInForm = ({ values, handleChange, handleBlur, handleSubmit }) => (
+const SignInForm = ({
+  values,
+  handleChange,
+  handleBlur,
+  handleSubmit,
+  showPassword,
+  onShowPasswordClick,
+}) => (
   <form className="sign-in-form" onSubmit={handleSubmit}>
     <TextInput
       value={values.email}
@@ -20,9 +27,11 @@ const SignInForm = ({ values, handleChange, handleBlur, handleSubmit }) => (
       onChange={handleChange}
       onBlur={handleBlur}
       label="Password"
-      type="password"
+      type={showPassword ? 'text' : 'password'}
       id="password"
       autoComplete="current-password"
+      trailingIcon={showPassword ? <EyeOffIcon /> : <EyeIcon />}
+      onTrailingIconSelect={onShowPasswordClick}
     />
     <div className="sign-in-form__button-container">
       <Button type="submit" className="sign-in-form__sign-in-button" raised>
@@ -45,6 +54,8 @@ SignInForm.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleBlur: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  showPassword: PropTypes.bool.isRequired,
+  onShowPasswordClick: PropTypes.func.isRequired,
 };
 
 export default SignInForm;
