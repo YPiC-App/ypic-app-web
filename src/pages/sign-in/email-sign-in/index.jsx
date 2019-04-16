@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import './styles.scss';
 import SignInForm from './sign-in-form';
 
-const EmailSignIn = () => (
+const EmailSignIn = ({ history: { push } }) => (
   <div className="email-sign-in">
-    <SignInForm />
+    <SignInForm push={push} />
   </div>
 );
 
-export default EmailSignIn;
+EmailSignIn.propTypes = {
+  history: PropTypes.shape().isRequired,
+};
+
+export default withRouter(EmailSignIn);
