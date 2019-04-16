@@ -10,6 +10,7 @@ import TopAppBar, {
 import MaterialIcon from '@material/react-material-icon';
 
 import './styles.scss';
+import UserSection from './user-section';
 
 const TopBar = ({ onMenuClick }) => (
   <TopAppBar>
@@ -19,6 +20,9 @@ const TopBar = ({ onMenuClick }) => (
           <MaterialIcon hasRipple icon="menu" onClick={onMenuClick} />
         </TopAppBarIcon>
         <TopAppBarTitle>Some Text</TopAppBarTitle>
+      </TopAppBarSection>
+      <TopAppBarSection align="end">
+        <UserSection />
       </TopAppBarSection>
     </TopAppBarRow>
   </TopAppBar>

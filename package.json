@@ -21,6 +21,7 @@
     "@material/react-drawer": "^0.11.0",
     "@material/react-list": "^0.11.0",
     "@material/react-material-icon": "^0.11.0",
+    "@material/react-menu-surface": "^0.11.0",
     "@material/react-text-field": "^0.11.0",
     "@material/react-top-app-bar": "^0.11.0",
     "firebase": "^5.9.4",
