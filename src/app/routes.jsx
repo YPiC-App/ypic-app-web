@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from 'components/private-route';
 import { isNullOrUndefined } from 'util';
 import LoadingScreen from 'components/loading-screen';
@@ -10,14 +10,15 @@ const Main = lazy(() => import('pages/main'));
 
 const Routes = ({ userData }) => (
   <Suspense fallback={<LoadingScreen />}>
-    <PrivateRoute
-      path="/"
-      exact
-      component={Main}
-      isAuthed={!isNullOrUndefined(userData)}
-      redirectPath="/sign-in"
-    />
-    <Route path="/sign-in" component={SignIn} />
+    <Switch>
+      <Route path="/sign-in" component={SignIn} />
+      <PrivateRoute
+        path="/"
+        component={Main}
+        isAuthed={!isNullOrUndefined(userData)}
+        redirectPath="/sign-in"
+      />
+    </Switch>
   </Suspense>
 );
 
