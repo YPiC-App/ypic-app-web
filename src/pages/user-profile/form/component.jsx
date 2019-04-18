@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from 'components/text-input';
 import Button from 'components/button';
+import { DatePicker } from 'components/date-picker/index';
 
 const UserProfileForm = ({
   isValid,
@@ -19,10 +20,17 @@ const UserProfileForm = ({
       onBlur={handleBlur}
       label="Member Number"
     />
-    <TextInput
+    <DatePicker
       onChange={handleChange}
       onBlur={handleBlur}
-      label="Date Of Birth"
+      label="Date of birth"
+      disableFuture
+      openTo="year"
+      format="dd/MM/yyyy"
+      views={['year', 'month', 'day']}
+      helperText="Hello"
+      clearable
+      autoOk
     />
     <TextInput
       onChange={handleChange}
