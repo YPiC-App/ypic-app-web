@@ -13,7 +13,7 @@ import './styles.scss';
 import UserSection from './user-section';
 
 const TopBar = ({ onMenuClick }) => (
-  <TopAppBar fixed>
+  <TopAppBar>
     <TopAppBarRow>
       <TopAppBarSection align="start">
         <TopAppBarIcon navIcon tabIndex={0}>

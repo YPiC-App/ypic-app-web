@@ -9,11 +9,11 @@ const Main = () => (
   <Fragment>
     <TopBar />
     <NavDrawer />
-    <TopAppBarFixedAdjust>
-      <DrawerAppContent>
+    <DrawerAppContent>
+      <TopAppBarFixedAdjust>
         <PageRoutes />
-      </DrawerAppContent>
-    </TopAppBarFixedAdjust>
+      </TopAppBarFixedAdjust>
+    </DrawerAppContent>
   </Fragment>
 );
 
