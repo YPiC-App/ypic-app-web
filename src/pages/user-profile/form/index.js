@@ -1,16 +1,13 @@
-import { withFormik } from 'formik';
-import { object, string } from 'yup';
+import { connect } from 'react-redux';
+import Form from './form';
 
-import Component from './component';
-
-const validationSchema = object().shape({
-  email: string()
-    .email('Invalid Email')
-    .required('Required'),
+const mapStateToProps = ({ user: { data } }) => ({
+  userData: data,
 });
 
-const handleSubmit = (values, { setSubmitting }) => {
-  console.log(values);
-  setSubmitting(false);
-};
-export default withFormik({ handleSubmit, validationSchema })(Component);
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Form);
