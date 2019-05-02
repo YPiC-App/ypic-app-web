@@ -41,6 +41,7 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "xml-loader": "^1.2.1",
     "yup": "^0.27.0"
   },
   "devDependencies": {

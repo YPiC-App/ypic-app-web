@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
+import { getCongregations } from 'services/congregation-info';
 import Component from './component';
 
-const handleOnLoad = dispatch => () => {};
+const handleOnLoad = dispatch => async () => {
+  console.log(await getCongregations());
+};
 
 const mapStateToProps = (state, ownProps) => ({});
 
