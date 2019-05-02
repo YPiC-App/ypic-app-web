@@ -9,7 +9,7 @@ const SignIn = lazy(() => import('pages/sign-in'));
 const Main = lazy(() => import('pages/main'));
 
 const Routes = ({ userData }) => (
-  <Suspense fallback={<LoadingScreen />}>
+  <Suspense fallback={<LoadingScreen loadingText="Loading Main Routes..." />}>
     <Switch>
       <Route path="/sign-in" component={SignIn} />
       <PrivateRoute

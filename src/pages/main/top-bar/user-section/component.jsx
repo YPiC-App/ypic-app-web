@@ -29,7 +29,7 @@ export default class UserSection extends Component {
   }
 
   render() {
-    const { displayName, photoURL } = this.props;
+    const { displayName, photoURL, onEditProfile } = this.props;
     const { anchorElement, open } = this.state;
     return (
       <div className="top-bar-user-section mdc-menu-surface--anchor">
@@ -55,7 +55,7 @@ export default class UserSection extends Component {
           className="top-bar-user-section__menu"
         >
           <List>
-            <ListItem onClick={() => {}}>
+            <ListItem onClick={onEditProfile}>
               <ListItemText primaryText="Edit Profile" />
             </ListItem>
             <ListItem onClick={() => {}}>
@@ -68,32 +68,8 @@ export default class UserSection extends Component {
   }
 }
 
-// const UserSection = ({ displayName, photoURL }) => {
-//   return (
-//     <div className="top-bar-user-section">
-//       <div className="top-bar-user-section__display-text">
-//         <span>{displayName}</span>
-//       </div>
-//       <img
-//         className="top-bar-user-section__avatar mdc-menu-surface--anchor"
-//         src={photoURL}
-//         alt={`${displayName} Avatar`}
-//         ref={setAnchorElement}
-//       />
-//       <MenuSurface
-//         open
-//         anchorCorner={Corner.BOTTOM_LEFT}
-//         anchorElement={anchorElement}
-//       >
-//         some menu content
-//       </MenuSurface>
-//     </div>
-//   );
-// };
-
 UserSection.propTypes = {
   displayName: PropTypes.string.isRequired,
   photoURL: PropTypes.string.isRequired,
+  onEditProfile: PropTypes.func.isRequired,
 };
-
-// export default UserSection;

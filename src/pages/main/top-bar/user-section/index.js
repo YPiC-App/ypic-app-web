@@ -1,27 +1,24 @@
 import { connect } from 'react-redux';
-import { setMenuAnchorElement } from 'reducers/main/top-bar/user-section/actions';
+import { withRouter } from 'react-router-dom';
 import component from './component';
 
-const handleAncorElement = dispatch => element => {
-  dispatch(setMenuAnchorElement(element));
+const handleEditProfile = push => () => {
+  push('/profile');
 };
 
 const mapStateToProps = ({
   user: {
     data: { displayName, photoURL },
   },
-  main: {
-    topBar: {
-      userSection: { menuAnchorElement },
-    },
-  },
-}) => ({ displayName, photoURL, anchorElement: menuAnchorElement });
+}) => ({ displayName, photoURL });
 
-const mapDispatchToProps = dispatch => ({
-  setAnchorElement: handleAncorElement(dispatch),
+const mapDispatchToProps = (dispatch, { history: { push } }) => ({
+  onEditProfile: handleEditProfile(push),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(component);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(component)
+);
