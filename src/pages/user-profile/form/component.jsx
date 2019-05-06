@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TextInput from 'components/text-input';
 import Button from 'components/button';
 import { DatePicker } from 'components/date-picker';
+import Select, { Option } from 'components/select';
 
 const UserProfileForm = ({
   isValid,
@@ -12,6 +13,7 @@ const UserProfileForm = ({
   handleBlur,
   setFieldValue,
   values,
+  congregations,
 }) => (
   <form className="user-profile-form" onSubmit={handleSubmit}>
     <TextInput
@@ -55,13 +57,9 @@ const UserProfileForm = ({
       clearable
       autoOk
     />
-    <TextInput
-      name="congregation"
-      value={values.congregation}
-      onChange={handleChange}
-      onBlur={handleBlur}
-      label="Congregation"
-    />
+    {/* <Select>
+      {congregations.map(cong => (<Option>{cong}</Option>))}
+    </Select> */}
     <TextInput
       name="email"
       value={values.email}

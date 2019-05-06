@@ -7,7 +7,8 @@ import {
 
 const handleAuthStateChange = dispatch => authData => {
   dispatch(getUserAuthStateRequested());
-  dispatch(setUserData(authData));
+  const { uid, email, displayName, photoURL } = authData;
+  dispatch(setUserData({ uid, email, displayName, photoURL }));
   dispatch(getUserAuthStateSucceeded());
 };
 

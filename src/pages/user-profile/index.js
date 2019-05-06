@@ -1,18 +1,30 @@
 import { connect } from 'react-redux';
-import { getCongregations } from 'services/congregation-info';
+import { setupUserProfile } from 'reducers/pages/user-profile/thunks';
 import Component from './component';
 
-const handleOnLoad = dispatch => async () => {
-  console.log(await getCongregations());
+const handleOnLoad = (dispatch, uid) => () => {
+  dispatch(setupUserProfile(uid));
 };
 
-const mapStateToProps = (state, ownProps) => ({});
+const mapStateToProps = ({ user: { data } }) => ({
+  uid: data.uid,
+});
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: handleOnLoad(dispatch),
+  dispatch,
+});
+
+const mergeProps = (
+  { uid, ...stateProps },
+  { dispatch, ...dispatchProps }
+) => ({
+  ...stateProps,
+  ...dispatchProps,
+  onLoad: handleOnLoad(dispatch, uid),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
+  mergeProps
 )(Component);

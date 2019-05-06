@@ -9,7 +9,10 @@ export default (state = initialState, action = {}) => {
     case SET_USER_DATA:
       return {
         ...state,
-        data: action.payload,
+        data: {
+          ...state.data,
+          ...action.payload,
+        },
       };
     default:
       return state;
