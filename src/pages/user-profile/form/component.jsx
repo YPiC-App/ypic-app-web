@@ -5,6 +5,8 @@ import Button from 'components/button';
 import { DatePicker } from 'components/date-picker';
 import Select, { Option } from 'components/select';
 
+import './styles.scss';
+
 const UserProfileForm = ({
   isValid,
   isSubmitting,
@@ -57,9 +59,17 @@ const UserProfileForm = ({
       clearable
       autoOk
     />
-    {/* <Select>
-      {congregations.map(cong => (<Option>{cong}</Option>))}
-    </Select> */}
+    <Select
+      className="user-profile-form__congregations"
+      label="Congregation"
+      value={values.congregation}
+    >
+      {congregations.map(cong => (
+        <Option key={cong.congregationCode} value={cong}>
+          {cong.name}
+        </Option>
+      ))}
+    </Select>
     <TextInput
       name="email"
       value={values.email}
@@ -93,6 +103,7 @@ UserProfileForm.propTypes = {
   handleBlur: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   values: PropTypes.shape().isRequired,
+  congregations: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 export default UserProfileForm;
