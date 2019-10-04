@@ -1,44 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
 import MuiAppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { Tabs, Tab } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import LogoSection from './LogoSection';
 
-const StyledNavList = styled.ul`
+const AppBarLayout = styled.div`
   display: flex;
-  flex-direction: row;
-  list-style: none;
-`;
-
-const StyledNavItem = styled.li`
-  padding: 0 0.3rem;
+  justify-content: space-between;
+  padding: 0 0.8rem;
 `;
 
 const FlexDiv = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const AppBar = () => {
   const scrolled = useScrollTrigger({ disableHysteresis: true });
-  const [value, setValue] = React.useState(0);
 
+  // TODO: Rework to use path to Highlight correct tab
+  const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
-    console.log(newValue);
     setValue(newValue);
   };
+
   return (
     <MuiAppBar elevation={scrolled ? 4 : 0}>
-      <FlexDiv>
-        <div>Sup fuckers!</div>
+      <AppBarLayout>
+        <FlexDiv>
+          <div>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <LogoSection />
+          </div>
+          <div>
+            <Tabs value={value} onChange={handleChange}>
+              <Tab label="Page 1" value="/" />
+              <Tab label="Page 2" value="Page2" />
+              <Tab label="Page 3" value="Page3" />
+            </Tabs>
+          </div>
+        </FlexDiv>
         <div>
-          <Tabs value={value} onChange={handleChange}>
-            <Tab label="Page 1" value="/" />
-            <Tab label="Page 2" value="Page2" />
-            <Tab label="Page 3" value="Page3" />
-          </Tabs>
+          <button type="button">Sign In</button>
         </div>
-      </FlexDiv>
+      </AppBarLayout>
     </MuiAppBar>
   );
 };

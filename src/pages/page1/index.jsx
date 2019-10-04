@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Page1 = () => (
   <div className="page2">
-    <h1 className="page2__heading">Page 2</h1>
+    <h1 className="page2__heading">Page 1</h1>
     <Link to="/">Go to Page 1</Link>
     <button type="button">Another Cool Button</button>
     <div>
